@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<OrganizationCatalog>
+    <Organization>
+        <id> </id>
+        <name>Apple</name>
+        <coordinates>
+            <x>4</x>
+            <y>5.0000898</y>
+        </coordinates>
+        <creationDate>1989</creationDate>
+        <annualTurnover>1869000.01</annualTurnover>
+        <employeesCount>545</employeesCount>
+        <type>PRIVATE_LIMITED_COMPANY</type>
+        <officialAddress>"Чайковского"</officialAddress>
+    </Organization>
+</OrganizationCatalog>
