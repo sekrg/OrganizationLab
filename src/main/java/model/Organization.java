@@ -23,35 +23,81 @@ public class Organization {
         this.officialAddress = officialAddress;
     }
 
+    public Organization(Long id, String name, Coordinates coordinates, float annualTurnover, int employeesCount, OrganizationType type, Address officialAddress) {
+        this.id = id;
+        this.name = name;
+        this.coordinates = coordinates;
+        this.annualTurnover = annualTurnover;
+        this.employeesCount = employeesCount;
+        this.type = type;
+        this.officialAddress = officialAddress;
+        creationDate = LocalDate.now();
+    }
+
+    public Organization() {
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Coordinates getCoordinates() {
         return coordinates;
+    }
+
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
     }
 
     public LocalDate getCreationDate() {
         return creationDate;
     }
 
+    public void setCreationDate(LocalDate creationDate) {
+        this.creationDate = creationDate;
+    }
+
     public float getAnnualTurnover() {
         return annualTurnover;
+    }
+
+    public void setAnnualTurnover(float annualTurnover) {
+        this.annualTurnover = annualTurnover;
     }
 
     public int getEmployeesCount() {
         return employeesCount;
     }
 
+    public void setEmployeesCount(int employeesCount) {
+        this.employeesCount = employeesCount;
+    }
+
     public OrganizationType getType() {
         return type;
     }
 
+    public void setType(OrganizationType type) {
+        this.type = type;
+    }
+
     public Address getOfficialAddress() {
         return officialAddress;
+    }
+
+    public void setOfficialAddress(Address officialAddress) {
+        this.officialAddress = officialAddress;
     }
 }
