@@ -44,15 +44,13 @@ public class XmlManager {
         FileInputStream fis = new FileInputStream(fileName);
         XMLDecoder decoder = new XMLDecoder(fis);
 
-        Organization org = (Organization) decoder.readObject();
-        Organization org2 = (Organization) decoder.readObject();
+      while(true) {  Organization org = (Organization) decoder.readObject();
 
-        decoder.close();
-        fis.close();
+
 
         dataBase.add(org);
-        dataBase.add(org2);
-        return dataBase;
+
+        return dataBase;}
     }
 
 
