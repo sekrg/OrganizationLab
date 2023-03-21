@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Lab5_125592" options="--add-exports java.xml/org.xml=ALL-UNNAMED" />
+      <module name="Lab5_125592" options="" />
     </option>
   </component>
 </project>

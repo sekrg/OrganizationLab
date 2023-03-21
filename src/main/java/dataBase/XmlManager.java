@@ -55,27 +55,5 @@ public class XmlManager {
         return dataBase;
     }
 
-    public static void main(String[] args) {
-        DataBase db = new DataBaseImpl(new Vector<>());
-        XmlManager manager = new XmlManager(db);
-        LocalDate creationDate = LocalDate.now();
-        Organization organization1 = new Organization(1L, "Х", new Coordinates(1,1d),creationDate, 2.31f, 2, OrganizationType.TRUST, new Address("123123"));
-        Organization organization2 = new Organization(1L, "Х2", new Coordinates(1,1d),creationDate, 2.31f, 2, OrganizationType.TRUST, new Address("123123"));
-//        Organization organization3 = new Organization(1L, "Х3", new Coordinates(1,1d),creationDate, 2.31f, 2, OrganizationType.TRUST, new Address("123123"));
-//        Organization organization4 = new Organization(1L, "Х4", new Coordinates(1,1d),creationDate, 2.31f, 2, OrganizationType.TRUST, new Address("123123"));
-//        Organization organization5 = new Organization(1L, "Х5", new Coordinates(1,1d),creationDate, 2.31f, 2, OrganizationType.TRUST, new Address("123123"));
 
-        db.getDataBase().add(organization1);
-        db.getDataBase().add(organization2);
-//        db.getDataBase().add(organization3);
-//        db.getDataBase().add(organization4);
-//        db.getDataBase().add(organization5);
-
-        try{
-//            manager.saveCollectionToXml("org.xml");
-            System.out.println(manager.loadCollectionFromXml("org.xml"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }
