@@ -83,11 +83,11 @@ public class DataBase {
                     throw new NullPointerException();
                 }
 
-                organization.setName(list.get(i)[0]);                 //name
+                organization.setName(list.get(i)[0]);
 
-                coordinates.setX(Double.parseDouble(list.get(i)[1])); //x
+                coordinates.setX(Double.parseDouble(list.get(i)[1]));
 
-                coordinates.setY(Double.valueOf(list.get(i)[2])); //y
+                coordinates.setY(Double.valueOf(list.get(i)[2]));
 
                 organization.setCoordinates(coordinates);
 
@@ -102,7 +102,7 @@ public class DataBase {
                 address.setZipCode(list.get(i)[7]);
                 organization.setOfficialAddress(address);
 
-                while (!idCounter.add(id)) { //генерация уникального id
+                while (!idCounter.add(id)) {
                     id++;
                 }
 

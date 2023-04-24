@@ -50,12 +50,11 @@ public class ElementsReader {
                     }
                 }
                 else{
-                    //здесь обрабатываются ошибки, связанные с количеством тегов в каждом HumanBeing
                     if (!((Element) nodeList.item(i)).getTagName().equals("Organization") && e==Const || !(e==Const) && ((Element) nodeList.item(i)).getTagName().equals("Organization")){
                         if (!(e==Const) && ((Element) nodeList.item(i)).getTagName().equals("Organization")){
                             i--;
                         }
-                        if (objectIsClosed){//исключение для ситуаций с лишними тегами уровня HumanBeing
+                        if (objectIsClosed){
                             tagList[(tagCounter-1)%(Const+3)] = "Organization";
                             if(tagInspector(tagList)){
                                 list.add(stringList);
@@ -75,7 +74,6 @@ public class ElementsReader {
                 if(nodeList.item(i).getTextContent().trim().equals("") || !(nodeList.item(i).getFirstChild().getTextContent().trim().equals(""))){
                     if (!((Element) nodeList.item(i)).getTagName().equals("coordinates") && !((Element) nodeList.item(i)).getTagName().equals("officialAddress")){
                         stringList[e] = nodeList.item(i).getTextContent().trim();
-                        //System.out.println("value = " + stringList[e] + " (e = " + e + ")");
                         e++;
                     }
                 }
@@ -93,7 +91,7 @@ public class ElementsReader {
      *
      */
 
-    private boolean tagInspector(String[] absList){ //проверка последовательности тегов (метод)
+    private boolean tagInspector(String[] absList){
         for (int i = 0; i < Const+3; i++) {
             if (absList[i] != order[i]){
                 return false;
