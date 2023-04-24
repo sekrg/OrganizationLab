@@ -1,35 +1,58 @@
+import collection.DataBase;
+import collection.ElementsReader;
 import commands.Developer;
-import dataBase.DataBase;
-import dataBase.DataBaseImpl;
-import dataBase.XmlManager;
-import model.Address;
-import model.Coordinates;
-import model.Organization;
-import model.OrganizationType;
-
 import java.io.IOException;
-import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 public class App {
 
-    public static void main(String[] args) {
-        DataBase db = new DataBaseImpl();
-        XmlManager manager = new XmlManager(db);
-        try{
+    public static void main(String[] args) throws IOException {
 
-            System.out.println(manager.loadCollectionFromXml("org.xml"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        DataBase dataBase = DataBase.getInstance();
 
+        String filePath = "C:\\Users\\mc_ga\\IdeaProjects\\Lab5_125592\\org.xml";
         System.out.println("Введите help для ознакомления с командами");
 
         Developer console = new Developer();
         Scanner scanner = new Scanner(System.in);
+
+        List<String[]> list;
+
+        try{
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder documentBuilder = factory.newDocumentBuilder();
+            Document document = documentBuilder.parse(filePath);
+            Element element = document.getDocumentElement();
+            NodeList nodeList = element.getChildNodes(); //первая проверка
+            ElementsReader elementsReader = new ElementsReader();
+            elementsReader.printElements(nodeList); //конец первой проверки
+            list = elementsReader.getList();
+            dataBase.initi(list);
+
+        }
+        catch (SAXException e){
+            System.out.println("Ошибка! Файл не подходит для парсинга xml!");
+            System.exit(0);
+        } catch (ParserConfigurationException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         while(scanner.hasNextLine()){
             System.out.println(console.execute(scanner.nextLine()));
         }
-
     }
+
+
+
+
+
 }

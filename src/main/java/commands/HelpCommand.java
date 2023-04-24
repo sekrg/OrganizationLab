@@ -4,6 +4,8 @@ public class HelpCommand implements Command {
 
     @Override
     public String execute() {
+        Developer.commandHistory[Developer.commandCounter%7] = "help";
+        Developer.commandCounter++;
         return "help : вывести справку по доступным командам\n" +
                 "info : вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)\n" +
                 "show : вывести в стандартный поток вывода все элементы коллекции в строковом представлении\n" +

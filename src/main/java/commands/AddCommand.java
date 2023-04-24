@@ -1,14 +1,16 @@
 package commands;
 
 import Utils.Utilities;
-import dataBase.DataBaseImpl;
+import collection.DataBase;
 
 
 public class AddCommand implements Command {
 
     @Override
     public String execute() {
-        DataBaseImpl.getInstance().add(Utilities.readOrganization());
+        Developer.commandHistory[Developer.commandCounter%7] = "add";
+        Developer.commandCounter++;
+        DataBase.getInstance().add(Utilities.readOrganization());
         return "Element added";
     }
 

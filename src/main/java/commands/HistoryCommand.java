@@ -4,8 +4,13 @@ public class HistoryCommand implements Command {
 
     @Override
     public String execute() {
-
-        return null;
+        System.out.println("Список последних 6 команд: ");
+        for (int i=0; i<6; i++){
+            System.out.println(Developer.commandHistory[i]);
+        }
+        Developer.commandHistory[Developer.commandCounter%7] = "history";
+        Developer.commandCounter++;
+        return "";
     }
     @Override
     public String getCommandName() {

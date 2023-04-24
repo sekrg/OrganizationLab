@@ -1,60 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<java version="17.0.6" class="java.beans.XMLDecoder">
- <object class="model.Organization">
-  <void property="annualTurnover">
-   <float>2.31</float>
-  </void>
-  <void property="coordinates">
-   <object class="model.Coordinates"/>
-  </void>
-  <void property="creationDate">
-   <object class="java.time.LocalDate" id="LocalDate0" method="parse">
-    <string>2023-03-13</string>
-   </object>
-  </void>
-  <void property="employeesCount">
-   <int>2</int>
-  </void>
-  <void property="id">
-   <long>1</long>
-  </void>
-  <void property="name">
-   <string>Х</string>
-  </void>
-  <void property="officialAddress">
-   <object class="model.Address"/>
-  </void>
-  <void property="type">
-   <object class="java.lang.Enum" id="OrganizationType0" method="valueOf">
-    <class>model.OrganizationType</class>
-    <string>TRUST</string>
-   </object>
-  </void>
- </object>
- <object class="model.Organization">
-  <void property="annualTurnover">
-   <float>2.31</float>
-  </void>
-  <void property="coordinates">
-   <object class="model.Coordinates"/>
-  </void>
-  <void property="creationDate">
-   <object idref="LocalDate0"/>
-  </void>
-  <void property="employeesCount">
-   <int>2</int>
-  </void>
-  <void property="id">
-   <long>1</long>
-  </void>
-  <void property="name">
-   <string>Х2</string>
-  </void>
-  <void property="officialAddress">
-   <object class="model.Address"/>
-  </void>
-  <void property="type">
-   <object idref="OrganizationType0"/>
-  </void>
- </object>
-</java>
+<?xml version="1.1" encoding="UTF-8" ?>
+<OrganizationCatalog>
+    <Organization>
+        <name>Apple</name>
+        <coordinates>
+            <x>4</x>
+            <y>5.0000898</y>
+        </coordinates>
+        <creationDate>1970-01-01</creationDate>
+        <annualTurnover>1869000.01</annualTurnover>
+        <employeesCount>545</employeesCount>
+        <type>PRIVATE_LIMITED_COMPANY</type>
+        <officialAddress>
+            <zipCode>Тут будет улица, а не цифры </zipCode>
+        </officialAddress>
+    </Organization>
+</OrganizationCatalog>

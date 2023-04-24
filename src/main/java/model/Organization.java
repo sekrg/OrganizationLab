@@ -1,19 +1,18 @@
 package model;
 
-import java.time.LocalDate;
+import java.time.Instant;
 import java.util.Date;
 
 public class Organization {
-    private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
+    private int id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
-    private java.time.LocalDate creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
-    private float annualTurnover; //Значение поля должно быть больше 0
-    private int employeesCount; //Значение поля должно быть больше 0
+    private java.util.Date creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
+    private long annualTurnover; //Значение поля должно быть больше 0
+    private Long employeesCount; //Значение поля должно быть больше 0
     private OrganizationType type; //Поле может быть null
     private Address officialAddress; //Поле не может быть null
-
-    public Organization(Long id, String name, Coordinates coordinates, LocalDate creationDate, float annualTurnover, int employeesCount, OrganizationType type, Address officialAddress) {
+    public Organization(int id, String name, Date creationDate, Coordinates coordinates, long annualTurnover, Long employeesCount, OrganizationType type, Address officialAddress) {
         this.id = id;
         this.name = name;
         this.coordinates = coordinates;
@@ -22,17 +21,6 @@ public class Organization {
         this.employeesCount = employeesCount;
         this.type = type;
         this.officialAddress = officialAddress;
-    }
-
-    public Organization(Long id, String name, Coordinates coordinates, float annualTurnover, int employeesCount, OrganizationType type, Address officialAddress) {
-        this.id = id;
-        this.name = name;
-        this.coordinates = coordinates;
-        this.annualTurnover = annualTurnover;
-        this.employeesCount = employeesCount;
-        this.type = type;
-        this.officialAddress = officialAddress;
-        creationDate = LocalDate.now();
     }
 
     @Override
@@ -52,11 +40,11 @@ public class Organization {
     public Organization() {
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -76,27 +64,27 @@ public class Organization {
         this.coordinates = coordinates;
     }
 
-    public LocalDate getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(java.time.LocalDate creationDate) {
+    public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
 
-    public float getAnnualTurnover() {
+    public long getAnnualTurnover() {
         return annualTurnover;
     }
 
-    public void setAnnualTurnover(float annualTurnover) {
+    public void setAnnualTurnover(long annualTurnover) {
         this.annualTurnover = annualTurnover;
     }
 
-    public int getEmployeesCount() {
+    public Long getEmployeesCount() {
         return employeesCount;
     }
 
-    public void setEmployeesCount(int employeesCount) {
+    public void setEmployeesCount(Long employeesCount) {
         this.employeesCount = employeesCount;
     }
 

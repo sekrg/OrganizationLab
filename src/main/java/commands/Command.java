@@ -1,7 +1,9 @@
 package commands;
 
+import java.io.IOException;
+
 public interface Command {
-    String execute();
+    String execute() throws IOException;
 
     String getCommandName();
 }

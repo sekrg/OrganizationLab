@@ -1,22 +1,38 @@
 package model;
 
 public class Coordinates {
-    private int x; //Значение поля должно быть больше -527
-    private double y;
+    private double x; //Значение поля должно быть больше -527
+    private Double y;
 
-    public Coordinates(int x, double y) {
+    public Coordinates(double x, Double y) {
         this.x = x;
         this.y = y;
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public double getY() {
+    public Double getY() {
         return y;
     }
 
     public Coordinates() {
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(Double y) {
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "Coordinates{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
     }
 }
