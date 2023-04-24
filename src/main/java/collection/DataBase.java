@@ -125,15 +125,6 @@ public class DataBase {
                 System.out.println("Некорректно введены данные. Поля не могут быть null.\nЧтобы узнать подробную информацию" +
                         " про ограничения на значения полей введите команду: help -a.");
             }
-
-        }
-    }
-     public void printList(List<String[]> list){
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println("List № " + (i+1) + ": ");
-            for (int j = 0; j < 8; j++) {
-                System.out.println("Element № " + j + " = " + list.get(i)[j]);
-            }
         }
     }
     public void clear() {

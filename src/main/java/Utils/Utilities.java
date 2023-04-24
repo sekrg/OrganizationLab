@@ -5,10 +5,8 @@ import model.Address;
 import model.Coordinates;
 import model.Organization;
 import model.OrganizationType;
-
 import java.sql.Date;
 import java.time.Instant;
-import java.time.LocalDate;
 import java.util.Locale;
 import java.util.Scanner;
 

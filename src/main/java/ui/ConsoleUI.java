@@ -26,7 +26,7 @@ public class ConsoleUI {
 
         DataBase dataBase = DataBase.getInstance();
 
-        String filePath = "C:\\Users\\mc_ga\\IdeaProjects\\Lab5_125592\\org.xml";
+        String filePath = "C:\\Users\\mc_ga\\IdeaProjects\\Lab5_125592\\db";
         System.out.println("Введите help для ознакомления с командами");
 
         Developer console = new Developer();
@@ -53,7 +53,13 @@ public class ConsoleUI {
 
         }
         while (scanner.hasNextLine()) {
-            System.out.println(console.execute(scanner.nextLine()));
+            String command = scanner.nextLine();
+            if (command.equals("exit")){
+                break;
+            }
+            else {
+                System.out.println(console.execute(command));
+            }
         }
     }
 }
