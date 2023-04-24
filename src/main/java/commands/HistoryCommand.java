@@ -4,7 +4,7 @@ public class HistoryCommand implements Command {
 
     @Override
     public String execute() {
-        System.out.println("Список последних 6 команд: ");
+        System.out.println("Список последних 7 команд: ");
         for (int i=0; i<6; i++){
             System.out.println(Developer.commandHistory[i]);
         }

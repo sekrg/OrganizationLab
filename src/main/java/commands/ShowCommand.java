@@ -11,7 +11,7 @@ public class ShowCommand implements Command {
     public String execute() {
         Developer.commandHistory[Developer.commandCounter%7] = "show";
         Developer.commandCounter++;
-        return DataBase.getInstance().getDataBase().stream().map(Organization::toString).collect(Collectors.joining());
+        return DataBase.getInstance().getDataBase().stream().map(Organization::toString).collect(Collectors.joining("\n"));
     }
     @Override
     public String getCommandName() {

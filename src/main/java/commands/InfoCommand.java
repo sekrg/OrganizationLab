@@ -8,7 +8,7 @@ public class InfoCommand implements Command {
     public String execute() {
         Developer.commandHistory[Developer.commandCounter%7] = "info";
         Developer.commandCounter++;
-        return "класс коллекции: "+ DataBase.getInstance().getDataBase().getClass()+"\nсоздано: " +DataBase.getInstance().getFileCreationDate("Input.json")+"\nэлементов внутри: "+DataBase.getInstance().getDataBase().size();
+        return "класс коллекции: "+ DataBase.getInstance().getDataBase().getClass()+"\nсоздано: " +DataBase.getInstance().getFileCreationDate("org.xml")+"\nэлементов внутри: "+DataBase.getInstance().getDataBase().size();
 
     }
     @Override
