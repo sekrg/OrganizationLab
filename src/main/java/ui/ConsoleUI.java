@@ -15,13 +15,26 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * The type Console ui.
+ */
 public class ConsoleUI {
     private final Scanner scanner;
 
+    /**
+     * Instantiates a new Console ui.
+     *
+     * @param scanner the scanner
+     */
     public ConsoleUI(Scanner scanner) {
         this.scanner = scanner;
     }
 
+    /**
+     * Start.
+     *
+     * @throws IOException the io exception
+     */
     public void start() throws IOException {
 
         DataBase dataBase = DataBase.getInstance();

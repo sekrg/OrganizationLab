@@ -2,6 +2,9 @@ package commands;
 
 import collection.DataBase;
 
+/**
+ * The type Info command.
+ */
 public class InfoCommand implements Command {
 
     @Override

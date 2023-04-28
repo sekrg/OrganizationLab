@@ -14,10 +14,19 @@ import java.time.format.DateTimeParseException;
 import java.util.*;
 
 
+/**
+ * The type Data base.
+ */
 public class DataBase {
 
     private Vector<Organization> database;
     private static DataBase INSTANCE;
+
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static DataBase getInstance() {
         if (INSTANCE == null) {
             INSTANCE = new DataBase();
@@ -29,24 +38,62 @@ public class DataBase {
     private DataBase() {
         this.database = new Vector<>();
     }
+
+    /**
+     * The constant idCounter.
+     */
     public static TreeSet<Integer> idCounter = new TreeSet<>();
+    /**
+     * The Id.
+     */
     static int id = 1;
+
+    /**
+     * Sets database.
+     *
+     * @param database the database
+     */
     public void setDatabase(Vector<Organization> database) {
         this.database = database;
     }
+
+    /**
+     * Add.
+     *
+     * @param organization the organization
+     */
     public void add(Organization organization) {
         organization.setId(generateId());
         database.add(organization);
     }
+
+    /**
+     * Remove by id.
+     *
+     * @param id the id
+     */
     public void removeById(int id) {
         database.removeIf(e -> String.valueOf(e.getId()).equals(String.valueOf(id)));
     }
+
+    /**
+     * Update by id.
+     *
+     * @param id the id
+     */
     public void updateById(int id) {
         database.removeIf(e -> String.valueOf(e.getId()).equals(String.valueOf(id)));
         Organization organization = Utilities.readOrganization();
         organization.setId(id);
         database.add(organization);
     }
+
+    /**
+     * Gets file creation date.
+     *
+     * @param fileName the file name
+     * @return the file creation date
+     */
     public FileTime getFileCreationDate(String fileName) {
         try {
             return (FileTime) Files.getAttribute((new File(fileName)).toPath(), "creationTime");
@@ -61,9 +108,21 @@ public class DataBase {
                 .orElse(0);
         return ++id;
     }
+
+    /**
+     * Gets data base.
+     *
+     * @return the data base
+     */
     public Vector<Organization> getDataBase() {
         return database;
     }
+
+    /**
+     * Initi.
+     *
+     * @param list the list
+     */
     public void initi(List<String[]> list){
         for (int i = 0; i < list.size(); i++) {
             Address address = new Address();
@@ -127,6 +186,10 @@ public class DataBase {
             }
         }
     }
+
+    /**
+     * Clear.
+     */
     public void clear() {
         database.clear();
     }

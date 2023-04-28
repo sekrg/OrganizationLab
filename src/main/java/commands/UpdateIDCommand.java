@@ -5,6 +5,9 @@ import model.Organization;
 
 import java.util.Scanner;
 
+/**
+ * The type Update id command.
+ */
 public class UpdateIDCommand implements Command {
 
     @Override

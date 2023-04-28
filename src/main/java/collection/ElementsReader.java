@@ -5,8 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * The type Elements reader.
+ */
 public class ElementsReader {
 
+    /**
+     * The Const.
+     */
     final int Const = 8;                              //Кол-во значений в организации
     private int e=Const;                                //для счёта элементов массива stringList
     private String[] order = {"Organization", "name", "coordinates", "x", "y", "creationDate", "annualTurnover", "employeesCount", "type", "officialAddress","zipCode" };
@@ -18,7 +24,9 @@ public class ElementsReader {
     private boolean objectIsClosed = false;
     private int HB;                        //для локализации ошибок в файле
 
-    /** Метод осуществляет проверку структуры файла и записывает полученные поля в список.
+    /**
+     * Метод осуществляет проверку структуры файла и записывает полученные поля в список.
+     *
      * @param nodeList получается в процессе парсинга xml файла при помощи DOM, содержит в себе всю информацию об элементах коллекции.
      */
     public void printElements(NodeList nodeList){
@@ -101,6 +109,8 @@ public class ElementsReader {
     }
 
     /**
+     * Gets list.
+     *
      * @return Возвращает прошедшие первый этап проверки массивы полей элементов коллекции
      */
     public List<String[]> getList() {

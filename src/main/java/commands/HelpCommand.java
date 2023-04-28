@@ -1,7 +1,16 @@
 package commands;
 
+/**
+ * The type Help command.
+ */
 public class HelpCommand implements Command {
+    /**
+     * The constant ANSI_RESET.
+     */
     public static final String ANSI_RESET = "\u001B[0m";
+    /**
+     * The constant ANSI_CYAN.
+     */
     public static final String ANSI_CYAN = "\u001B[36m";
     @Override
     public String execute() {

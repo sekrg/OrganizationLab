@@ -6,6 +6,9 @@ import model.OrganizationType;
 import java.util.Locale;
 import java.util.Scanner;
 
+/**
+ * The type Count command.
+ */
 public class CountCommand implements Command {
 
     @Override

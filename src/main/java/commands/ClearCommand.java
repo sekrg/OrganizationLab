@@ -2,6 +2,9 @@ package commands;
 
 import collection.DataBase;
 
+/**
+ * The type Clear command.
+ */
 public class ClearCommand implements Command {
 
     @Override

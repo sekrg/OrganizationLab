@@ -5,6 +5,9 @@ import collection.DataBase;
 import java.io.*;
 import java.util.Scanner;
 
+/**
+ * The type Save command.
+ */
 public class SaveCommand implements Command {
 
     @Override

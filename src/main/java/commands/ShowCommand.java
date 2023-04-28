@@ -5,6 +5,9 @@ import model.Organization;
 
 import java.util.stream.Collectors;
 
+/**
+ * The type Show command.
+ */
 public class ShowCommand implements Command {
 
     @Override

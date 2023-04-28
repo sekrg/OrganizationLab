@@ -5,6 +5,9 @@ import model.Organization;
 
 import java.util.stream.Collectors;
 
+/**
+ * The type Average command.
+ */
 public class AverageCommand implements Command {
 
     @Override

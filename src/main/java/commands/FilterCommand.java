@@ -6,6 +6,9 @@ import model.Organization;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+/**
+ * The type Filter command.
+ */
 public class FilterCommand implements Command {
 
     @Override

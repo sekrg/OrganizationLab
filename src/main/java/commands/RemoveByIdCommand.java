@@ -4,6 +4,9 @@ import collection.DataBase;
 
 import java.util.Scanner;
 
+/**
+ * The type Remove by id command.
+ */
 public class RemoveByIdCommand implements Command {
 
     @Override

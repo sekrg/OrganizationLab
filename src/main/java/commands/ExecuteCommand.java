@@ -7,6 +7,9 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+/**
+ * The type Execute command.
+ */
 public class ExecuteCommand implements Command {
 
     @Override

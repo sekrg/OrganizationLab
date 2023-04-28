@@ -1,5 +1,8 @@
 package commands;
 
+/**
+ * The type History command.
+ */
 public class HistoryCommand implements Command {
 
     @Override

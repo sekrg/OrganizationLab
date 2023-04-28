@@ -7,6 +7,9 @@ import java.util.Optional;
 
 import static Utils.Utilities.readOrganization;
 
+/**
+ * The type Add if min command.
+ */
 public class AddIfMinCommand implements Command {
 
     @Override

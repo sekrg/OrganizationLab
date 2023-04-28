@@ -4,6 +4,9 @@ import Utils.Utilities;
 import collection.DataBase;
 
 
+/**
+ * The type Add command.
+ */
 public class AddCommand implements Command {
 
     @Override

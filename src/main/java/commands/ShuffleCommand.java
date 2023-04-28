@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+/**
+ * The type Shuffle command.
+ */
 public class ShuffleCommand implements Command {
 
     @Override
@@ -16,6 +19,13 @@ public class ShuffleCommand implements Command {
       shuffle(DataBase.getInstance().getDataBase());
         return DataBase.getInstance().getDataBase().stream().map(Organization::toString).collect(Collectors.joining());
     }
+
+    /**
+     * Shuffle.
+     *
+     * @param <T>  the type parameter
+     * @param list the list
+     */
     public static<T> void shuffle(List<T> list)
     {Random random = new Random();
         for (int i = list.size() - 1; i >= 1; i--)

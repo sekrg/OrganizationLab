@@ -10,7 +10,15 @@ import java.time.Instant;
 import java.util.Locale;
 import java.util.Scanner;
 
+/**
+ * The type Utilities.
+ */
 public class Utilities {
+    /**
+     * Read organization organization.
+     *
+     * @return the organization
+     */
     public static Organization readOrganization() {
         Scanner scanner = new Scanner(System.in);
         Organization organization = new Organization();
