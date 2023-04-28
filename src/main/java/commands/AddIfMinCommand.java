@@ -36,5 +36,10 @@ public class AddIfMinCommand implements Command {
     public String getCommandName() {
         return "add_if_min";
     }
+
+    @Override
+    public String getCommandDescription() {
+        return "добавить новый элемент в коллекцию, если его значение меньше, чем у наименьшего элемента этой коллекции";
+    }
 }
 

@@ -41,4 +41,8 @@ public class ShuffleCommand implements Command {
     public String getCommandName() {
         return "shuffle";
     }
+    @Override
+    public String getCommandDescription() {
+        return "перемешать элементы коллекции в случайном порядке";
+    }
 }

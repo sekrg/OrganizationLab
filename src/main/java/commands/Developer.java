@@ -15,7 +15,7 @@ public class Developer {
      * история команд
      */
     public static String[] commandHistory = {null, null, null, null, null, null, null};
-    private List<Command> commands = List.of(new AddCommand(), new AddIfMinCommand(), new AverageCommand(), new ClearCommand(), new CountCommand(), new ExecuteCommand(), new FilterCommand(), new HelpCommand(), new HistoryCommand(), new InfoCommand(), new RemoveByIdCommand(), new SaveCommand(), new ShowCommand(), new ShuffleCommand(), new UpdateIDCommand());
+    private List<Command> commands = List.of(new AddCommand(), new AddIfMinCommand(), new AverageCommand(), new ClearCommand(), new CountCommand(), new ExecuteCommand(), new FilterCommand(), new HelpCommand(this), new HistoryCommand(), new InfoCommand(), new RemoveByIdCommand(), new SaveCommand(), new ShowCommand(), new ShuffleCommand(), new UpdateIDCommand());
     /**
      * The Script rec.
      */
@@ -40,5 +40,9 @@ public class Developer {
         catch(NullPointerException e) {}
 
         return "Incorrect commandName!";
+    }
+
+    public List<Command> getCommands() {
+        return commands;
     }
 }

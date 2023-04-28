@@ -20,4 +20,9 @@ public class AverageCommand implements Command {
     public String getCommandName() {
         return "average";
     }
+
+    @Override
+    public String getCommandDescription() {
+        return "вывести среднее значение поля annualTurnover для всех элементов коллекции";
+    }
 }

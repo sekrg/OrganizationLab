@@ -38,4 +38,9 @@ public class ExecuteCommand implements Command {
     public String getCommandName() {
         return "execute";
     }
+
+    @Override
+    public String getCommandDescription() {
+        return "считать и исполнить скрипт из указанного файла. В скрипте содержатся команды в таком же виде, в котором их вводит пользователь в интерактивном режиме";
+    }
 }

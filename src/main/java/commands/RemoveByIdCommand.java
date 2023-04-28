@@ -23,4 +23,8 @@ public class RemoveByIdCommand implements Command {
     public String getCommandName() {
         return "remove_by_id";
     }
+    @Override
+    public String getCommandDescription() {
+        return "удалить элемент из коллекции по его id";
+    }
 }

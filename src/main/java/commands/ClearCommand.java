@@ -18,4 +18,9 @@ public class ClearCommand implements Command {
     public String getCommandName() {
         return "clear";
     }
+
+    @Override
+    public String getCommandDescription() {
+        return "очистить коллекцию";
+    }
 }

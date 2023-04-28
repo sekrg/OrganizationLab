@@ -30,4 +30,8 @@ public class UpdateIDCommand implements Command {
     public String getCommandName() {
         return "update";
     }
+    @Override
+    public String getCommandDescription() {
+        return "обновить значение элемента коллекции, id которого равен заданному";
+    }
 }

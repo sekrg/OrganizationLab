@@ -18,4 +18,8 @@ public class InfoCommand implements Command {
     public String getCommandName() {
         return "info";
     }
+    @Override
+    public String getCommandDescription() {
+        return "вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)";
+    }
 }

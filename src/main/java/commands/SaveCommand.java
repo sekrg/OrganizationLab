@@ -70,4 +70,8 @@ public class SaveCommand implements Command {
     public String getCommandName() {
         return "save";
     }
+    @Override
+    public String getCommandDescription() {
+        return "сохранить коллекцию в файл";
+    }
 }

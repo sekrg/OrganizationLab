@@ -24,4 +24,9 @@ String sub = scanner.nextLine().toUpperCase();
     public String getCommandName() {
         return "filter";
     }
+
+    @Override
+    public String getCommandDescription() {
+        return "вывести элементы, значение поля name которых начинается с заданной подстроки";
+    }
 }

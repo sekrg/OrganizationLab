@@ -21,4 +21,5 @@ public interface Command {
      */
     String getCommandName();
 
+    String getCommandDescription();
 }

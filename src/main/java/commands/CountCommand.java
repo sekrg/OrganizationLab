@@ -24,4 +24,9 @@ OrganizationType type = OrganizationType.valueOf(s.toUpperCase(Locale.ENGLISH).t
     public String getCommandName() {
         return "count";
     }
+
+    @Override
+    public String getCommandDescription() {
+        return "вывести количество элементов, значение поля type которых меньше заданного";
+    }
 }
