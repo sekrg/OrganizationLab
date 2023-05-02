@@ -11,6 +11,10 @@ import java.util.Scanner;
  */
 public class CountCommand implements Command {
 
+    /**
+     * Нельзя конкретно реализовать т.к Type у организаций невозможно сравнить между собой по имени.
+     */
+
     @Override
     public String execute() {
         Developer.commandHistory[Developer.commandCounter%7] = "count";
@@ -18,7 +22,7 @@ public class CountCommand implements Command {
 Scanner scanner = new Scanner(System.in);
 String s = scanner.nextLine();
 OrganizationType type = OrganizationType.valueOf(s.toUpperCase(Locale.ENGLISH).trim());
-        return ""; //DataBase.getInstance().getDataBase().stream().filter(e -> e.getType()<type);
+        return "0"; //DataBase.getInstance().getDataBase().stream().filter(e -> e.getType()<type);
     }
     @Override
     public String getCommandName() {

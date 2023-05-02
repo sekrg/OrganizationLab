@@ -40,11 +40,11 @@ public class DataBase {
     }
 
     /**
-     * The constant idCounter.
+     * Хранит существующие ID
      */
     public static TreeSet<Integer> idCounter = new TreeSet<>();
     /**
-     * The Id.
+     * The ID.
      */
     static int id = 1;
 
@@ -68,7 +68,7 @@ public class DataBase {
     }
 
     /**
-     * Remove by id.
+     * Удаляет организацию по введенному ID
      *
      * @param id the id
      */
@@ -101,6 +101,9 @@ public class DataBase {
             return null;
         }
     }
+    /**
+     * Ищет максимальный ID и добавляет к нему +1
+     */
     private int generateId() {
         int id = database.stream()
                 .map(Organization::getId)
@@ -119,7 +122,7 @@ public class DataBase {
     }
 
     /**
-     * Initi.
+     * Считывание данных из файла и запись в коллекцию, обработка ошибок
      *
      * @param list the list
      */

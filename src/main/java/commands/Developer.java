@@ -17,7 +17,7 @@ public class Developer {
     public static String[] commandHistory = {null, null, null, null, null, null, null};
     private List<Command> commands = List.of(new AddCommand(), new AddIfMinCommand(), new AverageCommand(), new ClearCommand(), new CountCommand(), new ExecuteCommand(), new FilterCommand(), new HelpCommand(this), new HistoryCommand(), new InfoCommand(), new RemoveByIdCommand(), new SaveCommand(), new ShowCommand(), new ShuffleCommand(), new UpdateIDCommand());
     /**
-     * The Script rec.
+     * The Script rec. for executeScript
      */
     static int script_rec = 0;
 

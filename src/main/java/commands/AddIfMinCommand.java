@@ -11,7 +11,9 @@ import static Utils.Utilities.readOrganization;
  * The type Add if min command.
  */
 public class AddIfMinCommand implements Command {
-
+    /**
+     * Добавляет элемент если значение годового оборота у введенной организации < чем у существующих.
+     */
     @Override
     public String execute() {
         Developer.commandHistory[Developer.commandCounter%7] = "add_if_min";
