@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class ExitCommand implements Command{
     @Override
-    public String execute() throws IOException {
+    public String execute(String[] args) throws IOException {
         return null;
     }
 

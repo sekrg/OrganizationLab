@@ -5,7 +5,7 @@ import model.Organization;
 import java.util.Comparator;
 import java.util.Optional;
 
-import static Utils.Utilities.readOrganization;
+import static utils.Utilities.readOrganization;
 
 /**
  * The type Add if min command.
@@ -15,7 +15,7 @@ public class AddIfMinCommand implements Command {
      * Добавляет элемент если значение годового оборота у введенной организации < чем у существующих.
      */
     @Override
-    public String execute() {
+    public String execute(String[] args) {
         Developer.commandHistory[Developer.commandCounter%7] = "add_if_min";
         Developer.commandCounter++;
         Organization organization = readOrganization();

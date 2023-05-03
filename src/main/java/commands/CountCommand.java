@@ -16,12 +16,12 @@ public class CountCommand implements Command {
      */
 
     @Override
-    public String execute() {
+    public String execute(String[] args) {
         Developer.commandHistory[Developer.commandCounter%7] = "count";
         Developer.commandCounter++;
-Scanner scanner = new Scanner(System.in);
-String s = scanner.nextLine();
-OrganizationType type = OrganizationType.valueOf(s.toUpperCase(Locale.ENGLISH).trim());
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.nextLine();
+        OrganizationType type = OrganizationType.valueOf(s.toUpperCase(Locale.ENGLISH).trim());
         return "0"; //DataBase.getInstance().getDataBase().stream().filter(e -> e.getType()<type);
     }
     @Override

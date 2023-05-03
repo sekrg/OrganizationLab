@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class RemoveByIdCommand implements Command {
 
     @Override
-    public String execute() {
+    public String execute(String[] args) {
         Developer.commandHistory[Developer.commandCounter%7] = "remove_by_id";
         Developer.commandCounter++;
         Scanner scanner = new Scanner(System.in);

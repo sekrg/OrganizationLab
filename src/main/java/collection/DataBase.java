@@ -1,6 +1,6 @@
 package collection;
 
-import Utils.Utilities;
+import utils.Utilities;
 import model.Address;
 import model.Coordinates;
 import model.Organization;

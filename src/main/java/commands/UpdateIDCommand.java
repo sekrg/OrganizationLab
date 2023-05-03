@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class UpdateIDCommand implements Command {
 
     @Override
-    public String execute() {
+    public String execute(String[] args) {
         Developer.commandHistory[Developer.commandCounter%7] = "update";
         Developer.commandCounter++;
         Scanner scanner = new Scanner(System.in);

@@ -39,7 +39,7 @@ public class ConsoleUI {
 
         DataBase dataBase = DataBase.getInstance();
 
-        String filePath = "C:\\Users\\mc_ga\\IdeaProjects\\Lab5_125592\\db";
+        String filePath = "db";
         System.out.println("Введите help для ознакомления с командами");
 
         Developer console = new Developer();

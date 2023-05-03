@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class SaveCommand implements Command {
 
     @Override
-    public String execute() throws IOException {
+    public String execute(String[] args) throws IOException {
         Developer.commandHistory[Developer.commandCounter%7] = "save";
         Developer.commandCounter++;
         Scanner scanner = new Scanner(System.in);

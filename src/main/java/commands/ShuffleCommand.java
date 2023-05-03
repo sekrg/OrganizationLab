@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class ShuffleCommand implements Command {
 
     @Override
-    public String execute() {
+    public String execute(String[] args) {
         Developer.commandHistory[Developer.commandCounter%7] = "shuffle";
         Developer.commandCounter++;
       shuffle(DataBase.getInstance().getDataBase());

@@ -1,6 +1,6 @@
 package commands;
 
-import Utils.Utilities;
+import utils.Utilities;
 import collection.DataBase;
 
 
@@ -10,7 +10,7 @@ import collection.DataBase;
 public class AddCommand implements Command {
 
     @Override
-    public String execute() {
+    public String execute(String[] args) {
         Developer.commandHistory[Developer.commandCounter%7] = "add";
         Developer.commandCounter++;
         DataBase.getInstance().add(Utilities.readOrganization());

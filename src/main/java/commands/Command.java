@@ -12,7 +12,7 @@ public interface Command {
      * @return the string
      * @throws IOException the io exception
      */
-    String execute() throws IOException;
+    String execute(String[] args) throws IOException;
 
     /**
      * Gets command name.

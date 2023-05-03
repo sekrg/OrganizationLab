@@ -8,7 +8,7 @@ import collection.DataBase;
 public class ClearCommand implements Command {
 
     @Override
-    public String execute() {
+    public String execute(String[] args) {
         Developer.commandHistory[Developer.commandCounter%7] = "clear";
         Developer.commandCounter++;
         DataBase.getInstance().clear();
