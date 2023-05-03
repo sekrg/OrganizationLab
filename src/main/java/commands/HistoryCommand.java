@@ -2,6 +2,7 @@ package commands;
 
 /**
  * The type History command.
+ * Выводит последние 7 команд
  */
 public class HistoryCommand implements Command {
 

@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 /**
  * The type Shuffle command.
+ * Перемещает элементы коллекции в случайном порядке
  */
 public class ShuffleCommand implements Command {
 
@@ -25,6 +26,7 @@ public class ShuffleCommand implements Command {
      *
      * @param <T>  the type parameter
      * @param list the list
+     *
      */
     public static<T> void shuffle(List<T> list)
     {Random random = new Random();

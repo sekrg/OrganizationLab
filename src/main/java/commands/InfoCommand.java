@@ -4,6 +4,7 @@ import collection.DataBase;
 
 /**
  * The type Info command.
+ * Выводит в стандартный поток вывода информацию о коллекции
  */
 public class InfoCommand implements Command {
 

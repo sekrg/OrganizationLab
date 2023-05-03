@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 /**
  * The type Remove by id command.
+ * Удалить элемент из коллекции по его id
  */
 public class RemoveByIdCommand implements Command {
 

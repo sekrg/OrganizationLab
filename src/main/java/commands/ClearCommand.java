@@ -4,6 +4,7 @@ import collection.DataBase;
 
 /**
  * The type Clear command.
+ * Команда для очистки коллекции.
  */
 public class ClearCommand implements Command {
 

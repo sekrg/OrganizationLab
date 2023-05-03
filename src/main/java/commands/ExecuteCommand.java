@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 /**
  * The type Execute command.
+ * Выполняет скрипт с файла и избегает рекурсию
  */
 public class ExecuteCommand implements Command {
     private final ScriptManager scriptManager;

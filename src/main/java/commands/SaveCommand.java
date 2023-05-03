@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 /**
  * The type Save command.
+ * Сохранить коллекцию в файл
+ * Делает все элементы в единый String и записывает в файл
  */
 public class SaveCommand implements Command {
 

@@ -6,6 +6,7 @@ import collection.DataBase;
 
 /**
  * The type Add command.
+ * Добавляет новую организацию в коллекцию
  */
 public class AddCommand implements Command {
 

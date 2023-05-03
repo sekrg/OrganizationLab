@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 /**
  * The type Show command.
+ * Выводит в стандартный поток вывода все элементы коллекции в строковом представлении
  */
 public class ShowCommand implements Command {
 

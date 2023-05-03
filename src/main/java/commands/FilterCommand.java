@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 /**
  * The type Filter command.
+ * Выводит элементы, значение поля name которых начинается с заданной подстроки
  */
 public class FilterCommand implements Command {
 

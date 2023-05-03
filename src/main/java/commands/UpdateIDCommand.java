@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 /**
  * The type Update id command.
+ * Обновляет значение элемента коллекции, id которого равен заданному
  */
 public class UpdateIDCommand implements Command {
 

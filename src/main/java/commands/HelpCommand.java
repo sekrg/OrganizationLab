@@ -2,6 +2,7 @@ package commands;
 
 /**
  * The type Help command.
+ * Вывести справку по доступным командам
  */
 public class HelpCommand implements Command {
     /**

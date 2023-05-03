@@ -3,10 +3,9 @@ package commands;
 import collection.DataBase;
 import model.Organization;
 
-import java.util.stream.Collectors;
-
 /**
  * The type Average command.
+ * Выводит среднее значение поля annualTurnover (Годовой оборот) для всех элементов коллекции
  */
 public class AverageCommand implements Command {
 
