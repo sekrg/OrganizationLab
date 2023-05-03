@@ -4,21 +4,17 @@ package model;
  * The enum Organization type.
  */
 public enum OrganizationType {
-    /**
-     * Public organization type.
-     */
-    PUBLIC,
-    /**
-     * Government organization type.
-     */
-    GOVERNMENT,
-    /**
-     * Trust organization type.
-     */
-    TRUST,
-    /**
-     * Private limited company organization type.
-     */
-    PRIVATE_LIMITED_COMPANY;
+    PUBLIC(1),
+    GOVERNMENT(2),
+    TRUST(3),
+    PRIVATE_LIMITED_COMPANY(4);
+
+    int i;
+    OrganizationType(int i) {
+        this.i = i;
+    }
+    public int getI() {
+        return i;
+    }
 
 }
