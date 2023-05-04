@@ -25,9 +25,9 @@ public class Utilities {
         System.out.println("Введите имя организации:");
         organization.setName(getName(scanner));
         System.out.println("Введите координаты организации(2 координаты double, Double):");
-        organization.setCoordinates(new Coordinates(((double) getId(scanner)), (getDoubleId(scanner))));
+        organization.setCoordinates(new Coordinates(((double) getDoubleId(scanner)), (getDoubleId(scanner))));
         organization.setCreationDate(Date.from(Instant.now()));
-        System.out.println("Введите годовой оборот организации double:");
+        System.out.println("Введите годовой оборот организации");
         organization.setAnnualTurnover((getId(scanner)));
         System.out.println("Введите кол-во сотрудников:");
         organization.setEmployeesCount(((getLongId(scanner))));

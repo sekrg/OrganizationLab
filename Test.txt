@@ -4,4 +4,4 @@
 5
 help
 show
-execute C:\code\repos\OrganizationLab\Test2.txt
+execute C:\Users\mc_ga\IdeaProjects\OrganizationLabF\Test.txt

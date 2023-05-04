@@ -41,16 +41,16 @@ public class Organization {
 
     @Override
     public String toString() {
-        return "Organization{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", coordinates=" + coordinates +
-                ", creationDate=" + creationDate +
-                ", annualTurnover=" + annualTurnover +
-                ", employeesCount=" + employeesCount +
-                ", type=" + type +
-                ", officialAddress=" + officialAddress +
-                '}';
+        return "Organization{" + "\n" +
+                "id=" + id + "\n" +
+                "name='" + name + '\'' + "\n" +
+                "coordinates=" + coordinates + "\n" +
+                "creationDate=" + creationDate + "\n" +
+                "annualTurnover=" + annualTurnover + "\n" +
+                "employeesCount=" + employeesCount + "\n" +
+                "type=" + type + "\n" +
+                "officialAddress=" + officialAddress + "\n" +
+                '}' + "\n" ;
     }
 
     /**

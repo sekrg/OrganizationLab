@@ -7,12 +7,14 @@ import java.util.Scanner;
 
 /**
  * The type Save command.
- * Сохранить коллекцию в файл
- * Делает все элементы в единый String и записывает в файл
+ * Сохранить коллекцию в файл.
+ * Добавляет все элементы в единый String и записывает в файл
  */
 public class SaveCommand implements Command {
 
     @Override
+
+
     public String execute(String[] args) throws IOException {
         Developer.commandHistory[Developer.commandCounter%7] = "save";
         Developer.commandCounter++;
