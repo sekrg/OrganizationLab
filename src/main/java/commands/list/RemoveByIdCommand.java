@@ -1,6 +1,8 @@
-package commands;
+package commands.list;
 
 import collection.DataBase;
+import commands.Command;
+import commands.Invoker;
 
 import java.util.Scanner;
 
@@ -12,13 +14,13 @@ public class RemoveByIdCommand implements Command {
 
     @Override
     public String execute(String[] args) {
-        Developer.commandHistory[Developer.commandCounter%7] = "remove_by_id";
-        Developer.commandCounter++;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите id");
-        int x = scanner.nextInt();
-        DataBase.getInstance().removeById(x);
-        return "Element removed";
+        try {
+            int x = Integer.parseInt(args[1]);
+            DataBase.getInstance().removeById(x);
+            return "Element removed";
+        } catch (NumberFormatException e){
+            return "Id should be number";
+        }
     }
     @Override
     public String getCommandName() {

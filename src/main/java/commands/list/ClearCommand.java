@@ -1,6 +1,8 @@
-package commands;
+package commands.list;
 
 import collection.DataBase;
+import commands.Command;
+import commands.Invoker;
 
 /**
  * The type Clear command.
@@ -10,8 +12,6 @@ public class ClearCommand implements Command {
 
     @Override
     public String execute(String[] args) {
-        Developer.commandHistory[Developer.commandCounter%7] = "clear";
-        Developer.commandCounter++;
         DataBase.getInstance().clear();
         return "Collection cleared";
     }

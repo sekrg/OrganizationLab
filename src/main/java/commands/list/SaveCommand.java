@@ -1,6 +1,8 @@
-package commands;
+package commands.list;
 
 import collection.DataBase;
+import commands.Command;
+import commands.Invoker;
 
 import java.io.*;
 import java.util.Scanner;
@@ -16,8 +18,6 @@ public class SaveCommand implements Command {
 
 
     public String execute(String[] args) throws IOException {
-        Developer.commandHistory[Developer.commandCounter%7] = "save";
-        Developer.commandCounter++;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter filename to save collection");
         String filename = scanner.nextLine();

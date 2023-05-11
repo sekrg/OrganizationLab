@@ -1,6 +1,8 @@
 package commands;
 
+import commands.list.*;
 import exceptions.RecursionException;
+import utils.HistoryManager;
 import utils.ScriptManager;
 
 import java.io.IOException;
@@ -9,7 +11,7 @@ import java.util.List;
 /**
  * The type Developer.
  */
-public class Developer {
+public class Invoker {
     /**
      * The constant commandCounter.
      */
@@ -17,9 +19,12 @@ public class Developer {
     /**
      * история команд
      */
-    public static String[] commandHistory = {null, null, null, null, null, null, null};
+    private final HistoryManager history = new HistoryManager(7);
     private ScriptManager scriptManager = new ScriptManager(null);
-    private List<Command> commands = List.of(new AddCommand(), new AddIfMinCommand(), new AverageCommand(), new ClearCommand(), new CountCommand(), new ExecuteCommand(scriptManager), new FilterCommand(), new HelpCommand(this), new HistoryCommand(), new InfoCommand(), new RemoveByIdCommand(), new SaveCommand(), new ShowCommand(), new ShuffleCommand(), new UpdateIDCommand());
+    private List<Command> commands = List.of(new AddCommand(), new AddIfMinCommand(), new AverageCommand(),
+            new ClearCommand(), new CountCommand(), new ExecuteCommand(scriptManager), new FilterCommand(),
+            new HelpCommand(this), new HistoryCommand(history), new InfoCommand(), new RemoveByIdCommand(),
+            new SaveCommand(), new ShowCommand(), new ShuffleCommand(), new UpdateIDCommand());
 
     /**
      * Execute string.
@@ -31,9 +36,10 @@ public class Developer {
     public String execute(String line) throws IOException {
         try {
             for (Command command : commands) {
-            if (command.getCommandName().equals(line.split(" ")[0])) {
+            if (command.getCommandName().equals(line.trim().split(" ")[0])) {
                 try {
-                    return command.execute(line.split(" "));
+                    history.addCommandToHistory(command.getCommandName());
+                    return command.execute(line.trim().split(" "));
                 } catch (RecursionException e){
                     System.out.println(e.getMessage());
                     scriptManager.clearScripts();

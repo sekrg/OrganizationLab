@@ -1,6 +1,8 @@
-package commands;
+package commands.list;
 
 import collection.DataBase;
+import commands.Command;
+import commands.Invoker;
 import model.Organization;
 
 /**
@@ -11,8 +13,6 @@ public class AverageCommand implements Command {
 
     @Override
     public String execute(String[] args) {
-        Developer.commandHistory[Developer.commandCounter%7] = "average";
-        Developer.commandCounter++;
         return "среднее значение поля annualTurnover для всех элементов коллекции: "+ DataBase.getInstance().getDataBase().stream().mapToLong(Organization::getAnnualTurnover).average().orElse(Double.NaN);
     }
     @Override

@@ -1,5 +1,7 @@
-package commands;
+package commands.list;
 
+import commands.Command;
+import commands.Invoker;
 import exceptions.RecursionException;
 import utils.ScriptManager;
 
@@ -7,7 +9,6 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
 /**
@@ -24,15 +25,13 @@ public class ExecuteCommand implements Command {
     @Override
     public String execute(String[] args) {
         try {
-            Developer.commandHistory[Developer.commandCounter % 7] = "execute";
-            Developer.commandCounter++;
             String filename = args[1];
             if (!scriptManager.getScripts().contains(filename)) {
                 try {
                     InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(filename));
                     String script = new BufferedReader(inputStreamReader).lines().collect(Collectors.joining("\n"));
                     String[] commands = script.split("\n");
-                    Developer commandHandler = new Developer();
+                    Invoker commandHandler = new Invoker();
                     for (String command : commands) {
                         if (!command.split(" ")[0].equals("execute")) {
                             System.out.println(commandHandler.execute(command));

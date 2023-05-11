@@ -1,20 +1,23 @@
-package commands;
+package commands.list;
+
+import commands.Command;
+import utils.HistoryManager;
 
 /**
  * The type History command.
  * Выводит последние 7 команд
  */
 public class HistoryCommand implements Command {
+    private final HistoryManager history;
+
+    public HistoryCommand(HistoryManager history) {
+        this.history = history;
+    }
 
     @Override
     public String execute(String[] args) {
         System.out.println("Список последних 7 команд: ");
-        for (int i=0; i<6; i++){
-            System.out.println(Developer.commandHistory[i]);
-        }
-        Developer.commandHistory[Developer.commandCounter%7] = "history";
-        Developer.commandCounter++;
-        return "";
+        return history.getHistoryListOfCommands().stream().toList().toString();
     }
     @Override
     public String getCommandName() {

@@ -1,6 +1,8 @@
-package commands;
+package commands.list;
 
 import collection.DataBase;
+import commands.Command;
+import commands.Invoker;
 import model.Organization;
 
 import java.util.Scanner;
@@ -14,8 +16,6 @@ public class FilterCommand implements Command {
 
     @Override
     public String execute(String[] args) {
-        Developer.commandHistory[Developer.commandCounter%7] = "filter";
-        Developer.commandCounter++;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите подстроку");
         String sub = scanner.nextLine().toUpperCase();

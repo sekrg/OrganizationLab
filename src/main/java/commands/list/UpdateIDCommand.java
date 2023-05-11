@@ -1,6 +1,8 @@
-package commands;
+package commands.list;
 
 import collection.DataBase;
+import commands.Command;
+import commands.Invoker;
 import model.Organization;
 
 import java.util.Scanner;
@@ -13,8 +15,6 @@ public class UpdateIDCommand implements Command {
 
     @Override
     public String execute(String[] args) {
-        Developer.commandHistory[Developer.commandCounter%7] = "update";
-        Developer.commandCounter++;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите id");
         while(true) {

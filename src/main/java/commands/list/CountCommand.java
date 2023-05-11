@@ -1,6 +1,8 @@
-package commands;
+package commands.list;
 
 import collection.DataBase;
+import commands.Command;
+import commands.Invoker;
 import model.Organization;
 import model.OrganizationType;
 
@@ -20,8 +22,6 @@ public class CountCommand implements Command {
 
     @Override
     public String execute(String[] args) {
-        Developer.commandHistory[Developer.commandCounter%7] = "count";
-        Developer.commandCounter++;
         System.out.println("Введите тип");
         Scanner scanner = new Scanner(System.in);
         OrganizationType type = getType(scanner);

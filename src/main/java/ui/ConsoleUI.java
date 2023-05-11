@@ -2,7 +2,7 @@ package ui;
 
 import collection.DataBase;
 import collection.ElementsReader;
-import commands.Developer;
+import commands.Invoker;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -42,7 +42,7 @@ public class ConsoleUI {
         String filePath = "db";
         System.out.println("Введите help для ознакомления с командами");
 
-        Developer console = new Developer();
+        Invoker console = new Invoker();
 
         List<String[]> list;
 

@@ -1,6 +1,8 @@
-package commands;
+package commands.list;
 
 import collection.DataBase;
+import commands.Command;
+import commands.Invoker;
 import model.Organization;
 
 import java.util.stream.Collectors;
@@ -13,8 +15,6 @@ public class ShowCommand implements Command {
 
     @Override
     public String execute(String[] args) {
-        Developer.commandHistory[Developer.commandCounter%7] = "show";
-        Developer.commandCounter++;
         return DataBase.getInstance().getDataBase().stream().map(Organization::toString).collect(Collectors.joining("\n"));
     }
     @Override

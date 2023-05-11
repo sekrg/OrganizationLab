@@ -1,6 +1,8 @@
-package commands;
+package commands.list;
 
 import collection.DataBase;
+import commands.Command;
+import commands.Invoker;
 import model.Organization;
 import java.util.Comparator;
 import java.util.Optional;
@@ -16,8 +18,6 @@ public class AddIfMinCommand implements Command {
      */
     @Override
     public String execute(String[] args) {
-        Developer.commandHistory[Developer.commandCounter%7] = "add_if_min";
-        Developer.commandCounter++;
         Organization organization = readOrganization();
         Optional<Organization> minElement = DataBase.getInstance().getDataBase()
                 .stream()

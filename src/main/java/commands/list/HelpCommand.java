@@ -1,4 +1,7 @@
-package commands;
+package commands.list;
+
+import commands.Command;
+import commands.Invoker;
 
 /**
  * The type Help command.
@@ -14,16 +17,14 @@ public class HelpCommand implements Command {
      */
     public static final String ANSI_CYAN = "\u001B[36m";
 
-    private final Developer developer;
+    private final Invoker developer;
 
-    public HelpCommand(Developer developer) {
-        this.developer = developer;
+    public HelpCommand(Invoker invoker) {
+        this.developer = invoker;
     }
 
     @Override
     public String execute(String[] args) {
-        Developer.commandHistory[Developer.commandCounter % 7] = "help";
-        Developer.commandCounter++;
 
         for (Command o : developer.getCommands()) {
             System.out.println(ANSI_CYAN + o.getCommandName() + ANSI_RESET + " : " + o.getCommandDescription());
