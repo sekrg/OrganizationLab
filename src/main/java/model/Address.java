@@ -7,7 +7,6 @@ public class Address {
     /**
      * The Get zip code.
      */
-    public Object getZipCode;
     private String zipCode; //Поле не может быть null
 
     /**

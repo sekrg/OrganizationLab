@@ -5,10 +5,13 @@ import model.Address;
 import model.Coordinates;
 import model.Organization;
 import model.OrganizationType;
+
 import java.sql.Date;
 import java.time.Instant;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * The type Utilities.
@@ -38,6 +41,97 @@ public class Utilities {
         return organization;
     }
 
+    //<item><name>name</name></item>
+    public static Organization fromStringToOrganization(String line) {
+        Organization organization = new Organization();
+        organization.setName(getNameFromXmlString(line));
+        organization.setCoordinates(getCoordinatesFromXmlString(line));
+        organization.setAnnualTurnover(getAnnualTurnoverFromXmlString(line));
+        organization.setEmployeesCount(getEmployeesCountFromXmlString(line));
+        organization.setType(getOrganizationTypeFromXmlString(line));
+        organization.setOfficialAddress(getAddresFromXmlString(line));
+        return organization;
+    }
+
+    private static String getNameFromXmlString(String line) {
+        Pattern pattern = Pattern.compile("<name>(.*?)</name>");
+        Matcher matcher = pattern.matcher(line);
+        if (matcher.find()) {
+            return matcher.group(1);
+        } else {
+            return null;
+        }
+    }
+
+    private static Coordinates getCoordinatesFromXmlString(String line) {
+        Pattern pattern = Pattern.compile("<Coordinates>(.*?)</Coordinates>");
+        Matcher matcher = pattern.matcher(line);
+        if (matcher.find()) {
+            return Coordinates.fromStringToCoordinates(matcher.group(1));
+        } else {
+            return null;
+        }
+    }
+
+    private static long getAnnualTurnoverFromXmlString(String line) {
+        Pattern pattern = Pattern.compile("<AnnualTurnover>(.*?)</AnnualTurnover>");
+        Matcher matcher = pattern.matcher(line);
+        if (matcher.find()) {
+            return Long.parseLong(matcher.group(1));
+        } else {
+            return 0;
+        }
+    }
+
+    private static long getEmployeesCountFromXmlString(String line) {
+        Pattern pattern = Pattern.compile("<EmployeesCount>(.*?)</EmployeesCount>");
+        Matcher matcher = pattern.matcher(line);
+        if (matcher.find()) {
+            return Long.parseLong(matcher.group(1));
+        } else {
+            return 0;
+        }
+    }
+
+    private static OrganizationType getOrganizationTypeFromXmlString(String line) {
+        Pattern pattern = Pattern.compile("<OrganizationType>(.*?)</OrganizationType>");
+        Matcher matcher = pattern.matcher(line);
+        if (matcher.find()) {
+            return fromStringToOrganizationType(matcher.group(1));
+        } else {
+            return OrganizationType.PUBLIC;
+        }
+    }
+    private static Address getAddresFromXmlString(String line) {
+        Pattern pattern = Pattern.compile("<Address>(.*?)</Address>");
+        Matcher matcher = pattern.matcher(line);
+        if (matcher.find()) {
+            return new Address(matcher.group(1));
+        } else {
+            return new Address("0");
+        }
+    }
+
+    public static OrganizationType fromStringToOrganizationType(String line) {
+        switch (line.toUpperCase()) {
+            case ("PUBLIC") -> {
+                return OrganizationType.PUBLIC;
+            }
+            case "GOVERNMENT" -> {
+                return OrganizationType.GOVERNMENT;
+            }
+            case "TRUST" -> {
+                return OrganizationType.TRUST;
+            }
+            case "PRIVATE_LIMITED_COMPANY" -> {
+                return OrganizationType.PRIVATE_LIMITED_COMPANY;
+            }
+            default ->{
+                return OrganizationType.PUBLIC;
+            }
+        }
+    }
+
     private static long getId(Scanner scanner) {
         while (true) {
             String s = scanner.nextLine();
@@ -51,6 +145,7 @@ public class Utilities {
             }
         }
     }
+
     private static Double getDoubleId(Scanner scanner) {
         while (true) {
             String s = scanner.nextLine();
@@ -64,12 +159,13 @@ public class Utilities {
             }
         }
     }
+
     private static Long getLongId(Scanner scanner) {
         while (true) {
             String s = scanner.nextLine();
             try {
                 Long l = Long.valueOf(s);
-                if (s.length() > 0 && l.longValue()>0) {
+                if (s.length() > 0 && l.longValue() > 0) {
                     return l;
                 }
             } catch (NumberFormatException e) {
@@ -77,16 +173,20 @@ public class Utilities {
             }
         }
     }
+
     private static OrganizationType getType(Scanner scanner) {
         while (true) {
             String s = scanner.nextLine();
-            try{  if (s != null && s.length() > 0) {
-                return OrganizationType.valueOf(s.toUpperCase(Locale.ENGLISH).trim());
-            }}
-            catch (IllegalArgumentException e) {
-                System.out.println("Incorrect input!"); }
+            try {
+                if (s != null && s.length() > 0) {
+                    return OrganizationType.valueOf(s.toUpperCase(Locale.ENGLISH).trim());
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println("Incorrect input!");
+            }
         }
     }
+
     private static String getName(Scanner scanner) {
         while (true) {
             String s = scanner.nextLine();

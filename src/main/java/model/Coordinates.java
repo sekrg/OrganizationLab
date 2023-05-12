@@ -59,6 +59,9 @@ public class Coordinates {
     public void setY(Double y) {
         this.y = y;
     }
+    public static Coordinates fromStringToCoordinates(String line){
+        return new Coordinates(Double.parseDouble(line.split(";")[0]), Double.parseDouble(line.split(";")[1]));
+    }
 
     @Override
     public String toString() {

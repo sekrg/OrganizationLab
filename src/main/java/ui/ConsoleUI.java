@@ -7,6 +7,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import utils.InputType;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -42,7 +43,7 @@ public class ConsoleUI {
         String filePath = "db";
         System.out.println("Введите help для ознакомления с командами");
 
-        Invoker console = new Invoker();
+        Invoker console = new Invoker(InputType.CMD);
 
         List<String[]> list;
 

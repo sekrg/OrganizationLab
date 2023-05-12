@@ -3,9 +3,11 @@ package commands;
 import commands.commandList.*;
 import exceptions.RecursionException;
 import utils.HistoryManager;
+import utils.InputType;
 import utils.ScriptManager;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,18 +15,14 @@ import java.util.List;
  */
 public class Invoker {
     /**
-     * The constant commandCounter.
-     */
-    public static int commandCounter;
-    /**
      * история команд
      */
     private final HistoryManager history = new HistoryManager(7);
     private ScriptManager scriptManager = new ScriptManager(null);
-    private List<Command> commands = List.of(new AddCommand(), new AddIfMinCommand(), new AverageCommand(),
-            new ClearCommand(), new CountCommand(), new ExecuteCommand(scriptManager), new FilterCommand(),
-            new HelpCommand(this), new HistoryCommand(history), new InfoCommand(), new RemoveByIdCommand(),
-            new SaveCommand(), new ShowCommand(), new ShuffleCommand(), new UpdateIDCommand());
+    private List<Command> commands = new ArrayList<>();
+    public Invoker(InputType inputType) {
+        init(inputType);
+    }
 
     /**
      * Execute string.
@@ -51,6 +49,24 @@ public class Invoker {
         return "Incorrect commandName!";
     }
 
+    public void init(InputType inputType){
+        commands.clear();
+        commands.add(new AddCommand(inputType));
+        commands.add(new AddIfMinCommand());
+        commands.add(new AverageCommand());
+        commands.add(new ClearCommand());
+        commands.add(new CountCommand());
+        commands.add(new ExecuteCommand(scriptManager));
+        commands.add(new FilterCommand());
+        commands.add(new HelpCommand(this));
+        commands.add(new HistoryCommand(history));
+        commands.add(new InfoCommand());
+        commands.add(new RemoveByIdCommand());
+        commands.add(new SaveCommand());
+        commands.add(new ShowCommand());
+        commands.add(new ShuffleCommand());
+        commands.add(new UpdateIDCommand());
+    }
 
     public List<Command> getCommands() {
         return commands;

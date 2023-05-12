@@ -3,6 +3,7 @@ package commands.commandList;
 import commands.Command;
 import commands.Invoker;
 import exceptions.RecursionException;
+import utils.InputType;
 import utils.ScriptManager;
 
 import java.io.BufferedReader;
@@ -31,10 +32,14 @@ public class ExecuteCommand implements Command {
                     InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(filename));
                     String script = new BufferedReader(inputStreamReader).lines().collect(Collectors.joining("\n"));
                     String[] commands = script.split("\n");
-                    Invoker commandHandler = new Invoker();
+                    Invoker commandHandler = new Invoker(InputType.FILE);
                     for (String command : commands) {
                         if (!command.split(" ")[0].equals("execute")) {
-                            System.out.println(commandHandler.execute(command));
+                            try {
+                                System.out.println(commandHandler.execute(command));
+                            } catch (Exception ignored){
+                                System.out.println("Проверьте правильность скрипта.");
+                            }
                         } else {
                             scriptManager.addToScripts(command.split(" ")[1]);
                             if (script.contains(command.split(" ")[1])){

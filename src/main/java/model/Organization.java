@@ -57,6 +57,7 @@ public class Organization {
      * Instantiates a new Organization.
      */
     public Organization() {
+        creationDate = java.sql.Date.from(Instant.now());
     }
 
     /**

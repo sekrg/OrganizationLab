@@ -1,6 +1,7 @@
 package commands.commandList;
 
 import commands.Command;
+import utils.InputType;
 import utils.Utilities;
 import collection.DataBase;
 
@@ -10,10 +11,19 @@ import collection.DataBase;
  * Добавляет новую организацию в коллекцию
  */
 public class AddCommand implements Command {
+    private InputType inputType;
+
+    public AddCommand(InputType inputType) {
+        this.inputType = inputType;
+    }
 
     @Override
     public String execute(String[] args) {
-        DataBase.getInstance().add(Utilities.readOrganization());
+        if (inputType.equals(InputType.CMD)){
+            DataBase.getInstance().add(Utilities.readOrganization());
+        } else {
+            DataBase.getInstance().add(Utilities.fromStringToOrganization(args[1]));
+        }
         return "Element added";
     }
 
@@ -25,6 +35,14 @@ public class AddCommand implements Command {
     @Override
     public String getCommandDescription() {
         return "добавить новый элемент в коллекцию";
+    }
+
+    public InputType getInputType() {
+        return inputType;
+    }
+
+    public void setInputType(InputType inputType) {
+        this.inputType = inputType;
     }
 }
 
