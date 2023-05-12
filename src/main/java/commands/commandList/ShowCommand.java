@@ -1,8 +1,7 @@
-package commands.list;
+package commands.commandList;
 
 import collection.DataBase;
 import commands.Command;
-import commands.Invoker;
 import model.Organization;
 
 import java.util.stream.Collectors;

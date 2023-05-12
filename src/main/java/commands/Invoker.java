@@ -1,6 +1,6 @@
 package commands;
 
-import commands.list.*;
+import commands.commandList.*;
 import exceptions.RecursionException;
 import utils.HistoryManager;
 import utils.ScriptManager;

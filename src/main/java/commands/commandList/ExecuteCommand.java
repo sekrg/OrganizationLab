@@ -1,4 +1,4 @@
-package commands.list;
+package commands.commandList;
 
 import commands.Command;
 import commands.Invoker;

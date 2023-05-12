@@ -1,7 +1,6 @@
-package commands.list;
+package commands.commandList;
 
 import commands.Command;
-import commands.Invoker;
 import utils.Utilities;
 import collection.DataBase;
 

@@ -1,8 +1,7 @@
-package commands.list;
+package commands.commandList;
 
 import collection.DataBase;
 import commands.Command;
-import commands.Invoker;
 
 import java.io.*;
 import java.util.Scanner;
