@@ -1,0 +1,3 @@
+show
+update 1 <item><name>Test</name><Coordinates>1;2</Coordinates><AnnualTurnover>1</AnnualTurnover><EmployeesCount>2</EmployeesCount><OrganizationType>(GOVERNMENT)</OrganizationType><Address>(Tick)</Address></item>
+show

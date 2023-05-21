@@ -65,7 +65,7 @@ public class Invoker {
         commands.add(new SaveCommand());
         commands.add(new ShowCommand());
         commands.add(new ShuffleCommand());
-        commands.add(new UpdateIDCommand());
+        commands.add(new UpdateIDCommand(inputType));
     }
 
     public List<Command> getCommands() {

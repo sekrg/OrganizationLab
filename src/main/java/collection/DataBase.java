@@ -81,9 +81,8 @@ public class DataBase {
      *
      * @param id the id
      */
-    public void updateById(int id) {
+    public void updateById(int id, Organization organization) {
         database.removeIf(e -> String.valueOf(e.getId()).equals(String.valueOf(id)));
-        Organization organization = Utilities.readOrganization();
         organization.setId(id);
         database.add(organization);
     }
